@@ -26,6 +26,7 @@
 		6D41C1DF253F88B5003B4A88 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6D41C1EF2540E530003B4A88 /* AddBookView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddBookView.swift; sourceTree = "<group>"; };
 		6D41C1F92540F551003B4A88 /* Bookworm.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Bookworm.xcdatamodel; sourceTree = "<group>"; };
+		6D41C1FD2540F5C7003B4A88 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -44,6 +45,7 @@
 			children = (
 				6D41C1D0253F88B3003B4A88 /* Bookworm */,
 				6D41C1CF253F88B3003B4A88 /* Products */,
+				6D41C1FD2540F5C7003B4A88 /* README.md */,
 			);
 			sourceTree = "<group>";
 		};
