@@ -13,3 +13,5 @@ I learned how to:
 - Build a list with @FetchRequest
 
 This app was made using the course **100 Days of SwiftUI** from [Hacking With Swift](https://www.hackingwithswift.com/100/swiftui/)
+
+The pictures used are by Ryan Wallace, Eugene Triguba, Jamie Street, Alvaro Serrano, Joao Silas, David Dilbert, and Casey Horner – you can get the originals from [Unsplash](https://unsplash.com)
