@@ -9,6 +9,11 @@ import SwiftUI
 import CoreData
 
 struct DetailView: View {
+    
+    @Environment(\.managedObjectContext) var context
+    @Environment(\.presentationMode) var presentationMode
+    @State private var showingDeleteAlert = false
+    
     let book: Book
     
     var body: some View {
@@ -42,6 +47,23 @@ struct DetailView: View {
             }
         }
         .navigationBarTitle(Text(book.title ?? "Unknown Book"))
+        .navigationBarItems(trailing: Button(action:{ self.showingDeleteAlert = true }) {
+            Image(systemName: "trash")
+        })
+        .alert(isPresented: $showingDeleteAlert) {
+            Alert(title: Text("Delete book"),
+                  message: Text("Are you sure?"),
+                  primaryButton: .destructive(Text("Delete")) { self.deleteBook() },
+                  secondaryButton: .cancel())
+        }
+    }
+    
+    func deleteBook() {
+        context.delete(book)
+        
+        try? context.save()
+        
+        presentationMode.wrappedValue.dismiss()
     }
 }
 
