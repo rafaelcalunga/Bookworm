@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct AddBookView: View {
-    @Environment(\.managedObjectContext) var viewContext
+    @Environment(\.managedObjectContext) var context
     
     @Environment(\.presentationMode) var presentationMode
     
@@ -50,14 +50,14 @@ struct AddBookView: View {
     }
     
     func addBook() {
-        let newBook = Book(context: viewContext)
+        let newBook = Book(context: context)
         newBook.title = title
         newBook.author = author
         newBook.rating = Int16(rating)
         newBook.genre = genre
         newBook.review = review
         
-        try? viewContext.save()
+        try? context.save()
         
         presentationMode.wrappedValue.dismiss()
     }

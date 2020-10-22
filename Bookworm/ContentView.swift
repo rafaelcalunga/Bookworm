@@ -9,7 +9,7 @@ import SwiftUI
 import CoreData
 
 struct ContentView: View {
-    @Environment(\.managedObjectContext) var viewContext
+    @Environment(\.managedObjectContext) var context
     
     @FetchRequest(entity: Book.entity(), sortDescriptors: []) var books: FetchedResults<Book>
     
@@ -20,7 +20,7 @@ struct ContentView: View {
         NavigationView {
             List {
                 ForEach(books, id: \.self) { book in
-                    NavigationLink(destination: Text(book.title ?? "Unknown Title")) {
+                    NavigationLink(destination: DetailView(book: book)) {
                         EmojiRatingView(rating: book.rating)
                             .font(.largeTitle)
                         
@@ -41,7 +41,7 @@ struct ContentView: View {
             })
             .sheet(isPresented: $showingAddScreen) {
                 AddBookView()
-                    .environment(\.managedObjectContext, self.viewContext)
+                    .environment(\.managedObjectContext, self.context)
             }
         }
     }

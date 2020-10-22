@@ -12,14 +12,14 @@ struct PersistenceController {
 
     static var preview: PersistenceController = {
         let result = PersistenceController(inMemory: true)
-        let viewContext = result.container.viewContext
+        let context = result.container.viewContext
         
-        let newBook = Book(context: viewContext)
-        newBook.author = "Arthur Conan Doyle"
-        newBook.title = "A Study in Scarlet"
-        newBook.genre = "Detective"
-        newBook.rating = 5
-        newBook.review = ""
+        let book = Book(context: context)
+        book.author = "Arthur Conan Doyle"
+        book.title = "A Study in Scarlet"
+        book.genre = "Mystery"
+        book.rating = 5
+        book.review = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi dui neque, efficitur sit amet ipsum sed, consectetur sagittis risus."
         
         do {
             try viewContext.save()
