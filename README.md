@@ -2,6 +2,8 @@
 
 This project is an app to track which books you’ve read and what you thought of them.
 
+![Bookworm](https://github.com/rafaelcalunga/Bookworm/blob/main/bookworm.gif)
+
 I made this project to improve my knowledge in iOS development, specially SwiftUI.
 
 I learned how to:
