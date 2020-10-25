@@ -14,6 +14,13 @@ struct DetailView: View {
     @Environment(\.presentationMode) var presentationMode
     @State private var showingDeleteAlert = false
     
+    private let dateFormatter: DateFormatter = {
+        let formatter = DateFormatter()
+        formatter.dateStyle = .short
+        formatter.timeStyle = .medium
+        return formatter
+    }()
+    
     let book: Book
     
     var body: some View {
@@ -42,6 +49,12 @@ struct DetailView: View {
                 
                 RatingView(rating: .constant(Int(book.rating)))
                     .font(.largeTitle)
+                
+                if let date = book.date {
+                    Text("\(date, formatter: dateFormatter)")
+                        .foregroundColor(.secondary)
+                        .padding()
+                }
                 
                 Spacer()
             }
@@ -77,6 +90,7 @@ struct DetailView_Previews: PreviewProvider {
         book.genre = "Mystery"
         book.rating = 5
         book.review = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi dui neque, efficitur sit amet ipsum sed, consectetur sagittis risus."
+        book.date = Date()
         
         return NavigationView {
             DetailView(book: book)

@@ -20,6 +20,7 @@ struct PersistenceController {
         book.genre = "Mystery"
         book.rating = 1
         book.review = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi dui neque, efficitur sit amet ipsum sed, consectetur sagittis risus."
+        book.date = Date()
         
         do {
             try context.save()
