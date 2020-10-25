@@ -18,7 +18,7 @@ struct PersistenceController {
         book.author = "Arthur Conan Doyle"
         book.title = "A Study in Scarlet"
         book.genre = "Mystery"
-        book.rating = 5
+        book.rating = 1
         book.review = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi dui neque, efficitur sit amet ipsum sed, consectetur sagittis risus."
         
         do {
